@@ -54,10 +54,10 @@ export default function Home() {
       <section style={styles.profileSection}>
         <div style={styles.imageWrapper}>
           <img
-            src="/headshot.jpg"
+            src={`${process.env.NODE_ENV === "production" ? "/my-portfolio" : ""}/headshot.jpg`}
             alt="Portrait of Your Name"
             style={styles.headshot}
-          />
+/>
         </div>
 
         <div style={styles.profileText}>
