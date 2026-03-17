@@ -87,7 +87,7 @@ export default function Home() {
           <p style={styles.paragraph}>
             Email:{" "}
             <a href="ahande3@gatech.edu" style={styles.link}>
-              you@example.com
+              ahande3@gatech.edu
             </a>
           </p>
         </section>
