@@ -39,16 +39,11 @@ export default function Home() {
       <header style={styles.header}>
         <div>
           <h1 style={styles.name}>Your Name</h1>
-          <p style={styles.role}>
-            PhD Student in Mathematics
-          </p>
-          <p style={styles.affiliation}>
-            Department of Mathematics, Your University
-          </p>
+          <p style={styles.role}>PhD Student in Mathematics</p>
+          <p style={styles.affiliation}>Department of Mathematics, Your University</p>
         </div>
 
         <nav style={styles.nav}>
-          <a href="#about" style={styles.navLink}>About</a>
           <a href="#research" style={styles.navLink}>Research</a>
           <a href="#papers" style={styles.navLink}>Papers</a>
           <a href="#talks" style={styles.navLink}>Talks</a>
@@ -56,28 +51,28 @@ export default function Home() {
         </nav>
       </header>
 
-      <section style={styles.hero}>
-        <p style={styles.intro}>
-          I am a graduate student working in probability, statistical mechanics,
-          and related areas. My research interests include percolation,
-          random-cluster models, first-passage percolation, and interacting
-          particle systems.
-        </p>
-      </section>
+      <section style={styles.profileSection}>
+        <div style={styles.imageWrapper}>
+          <img
+            src="/headshot.jpg"
+            alt="Portrait of Your Name"
+            style={styles.headshot}
+          />
+        </div>
 
-      <section id="about" style={styles.section}>
-        <h2 style={styles.sectionTitle}>About</h2>
-        <p style={styles.paragraph}>
-          I am a PhD student in the Department of Mathematics at Your University,
-          advised by Professor Advisor Name. My work focuses on problems in
-          probability theory and mathematical physics, especially questions
-          involving phase transitions, connectivity, and geometric properties of
-          random media.
-        </p>
-        <p style={styles.paragraph}>
-          Before joining Your University, I studied at Previous Institution,
-          where I completed a degree in Mathematics.
-        </p>
+        <div style={styles.profileText}>
+          <h2 style={styles.profileHeading}>About</h2>
+          <p style={styles.paragraph}>
+            I am a PhD student in the Department of Mathematics at Your University,
+            advised by Professor Advisor Name. My research is in probability and
+            statistical mechanics, with interests including percolation,
+            random-cluster models, first-passage percolation, and related topics.
+          </p>
+          <p style={styles.paragraph}>
+            Before joining Your University, I studied at Previous Institution,
+            where I completed a degree in Mathematics.
+          </p>
+        </div>
       </section>
 
       <section id="research" style={styles.section}>
@@ -140,11 +135,10 @@ export default function Home() {
 
 const styles: Record<string, React.CSSProperties> = {
   main: {
-    maxWidth: 900,
+    maxWidth: 960,
     margin: "0 auto",
     padding: "48px 24px 80px",
-    fontFamily:
-      'Georgia, "Times New Roman", Times, serif',
+    fontFamily: 'Georgia, "Times New Roman", Times, serif',
     color: "#111827",
     lineHeight: 1.7,
     backgroundColor: "#ffffff",
@@ -184,13 +178,31 @@ const styles: Record<string, React.CSSProperties> = {
     color: "#1f2937",
     fontSize: "0.98rem",
   },
-  hero: {
+  profileSection: {
+    display: "grid",
+    gridTemplateColumns: "220px 1fr",
+    gap: 32,
+    alignItems: "start",
     marginBottom: 40,
   },
-  intro: {
-    fontSize: "1.15rem",
-    color: "#1f2937",
-    maxWidth: 760,
+  imageWrapper: {
+    width: "100%",
+  },
+  headshot: {
+    width: "100%",
+    maxWidth: 220,
+    borderRadius: 12,
+    display: "block",
+    border: "1px solid #e5e7eb",
+  },
+  profileText: {
+    minWidth: 0,
+  },
+  profileHeading: {
+    fontSize: "1.5rem",
+    fontWeight: 600,
+    marginTop: 0,
+    marginBottom: 16,
   },
   section: {
     marginTop: 40,
