@@ -1,5 +1,5 @@
 import TriangularPercolation from "@/components/TriangularPercolation";
-
+const x = 5
 const basePath =
   process.env.NODE_ENV === "production" ? "/my-portfolio" : "";
 
