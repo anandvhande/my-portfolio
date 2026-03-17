@@ -77,7 +77,7 @@ export default function Home() {
           <article style={styles.itemCard}>
             <h3 style={styles.itemTitle}>{paper.title}</h3>
             <a href={paper.link} style={styles.link}>
-              Read more →
+              arxiv link →
             </a>
           </article>
         </section>
