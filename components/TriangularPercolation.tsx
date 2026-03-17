@@ -92,7 +92,7 @@ export default function TriangularPercolation() {
           marginBottom: 10,
         }}
       >
-        Site percolation on the triangular lattice
+        Dynamical percolation
       </div>
 
       <svg
@@ -102,7 +102,7 @@ export default function TriangularPercolation() {
           height: "auto",
           display: "block",
         }}
-        aria-label="Animated site percolation on the triangular lattice"
+        aria-label="Dynamical percolation"
         role="img"
       >
         {sites.map((site, i) => {

@@ -17,10 +17,10 @@ export default function Home() {
       <div style={styles.main}>
         <header style={styles.header}>
           <div>
-            <h1 style={styles.name}>Your Name</h1>
+            <h1 style={styles.name}>Anand Hande</h1>
             <p style={styles.role}>PhD Student in Mathematics</p>
             <p style={styles.affiliation}>
-              Department of Mathematics, Your University
+              Department of Mathematics, Georgia Institute of Technology
             </p>
 
             <p style={styles.cv}>
@@ -47,7 +47,6 @@ export default function Home() {
           <div style={styles.imageWrapper}>
             <img
               src={`${basePath}/headshot.jpg`}
-              alt="Portrait of Your Name"
               style={styles.headshot}
             />
           </div>
@@ -55,15 +54,13 @@ export default function Home() {
           <div style={styles.profileText}>
             <h2 style={styles.profileHeading}>About</h2>
             <p style={styles.paragraph}>
-              I am a PhD student in the Department of Mathematics at Your
-              University, advised by Professor Advisor Name. My research is in
-              probability and statistical mechanics, with interests including
-              percolation, random-cluster models, first-passage percolation, and
-              related topics.
+              I am a 3rd year math phd student at Georgia Tech studying probability theory, specifically percolation.  My advisor is Michael Damron.  Percolation theory is the study of a random configuration of some lattice.  Currently, I am working on problems in dynamical percolation.  
             </p>
             <p style={styles.paragraph}>
-              Before joining Your University, I studied at Previous Institution,
-              where I completed a degree in Mathematics.
+              Before grad school, I studied Mathematics (B.S) and Computer Science (B.S) at UNC Chapel Hill.  There, I worked with Dr. Idris Assani in number theory and ergodic theory.
+            </p>
+            <p style={styles.paragraph}>
+              Outside of math, I enjoy playing tennis and running.
             </p>
           </div>
         </section>
@@ -71,14 +68,11 @@ export default function Home() {
         <section id="research" style={styles.sectionCard}>
   <h2 style={styles.sectionTitle}>Research Interests</h2>
   <ul style={styles.list}>
-    <li>Percolation theory</li>
-    <li>Random-cluster and Ising-type models</li>
+    <li>Bernoulli percolation</li>
     <li>First-passage percolation</li>
     <li>Noise sensitivity and dynamical percolation</li>
-    <li>Probability in statistical mechanics</li>
   </ul>
 
-  <TriangularPercolation />
 </section>
 
         <section id="papers" style={styles.sectionCard}>
