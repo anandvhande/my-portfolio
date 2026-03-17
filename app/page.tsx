@@ -4,11 +4,8 @@ const basePath =
   process.env.NODE_ENV === "production" ? "/my-portfolio" : "";
 
 const paper = {
-  title: "Title of Paper",
-  venue: "Journal / Conference, 2025",
-  description:
-    "A short 1–2 sentence summary of the paper and its main contribution.",
-  link: "#",
+  title: "Syracuse Maps as Non-singular Power-Bounded Transformations and Their Inverse Maps",
+  link: "https://arxiv.org/abs/2208.11801",
 };
 
 export default function Home() {
@@ -54,7 +51,7 @@ export default function Home() {
           <div style={styles.profileText}>
             <h2 style={styles.profileHeading}>About</h2>
             <p style={styles.paragraph}>
-              I am a 3rd year math phd student at Georgia Tech studying probability theory, specifically percolation.  My advisor is Michael Damron.  Percolation theory is the study of a random configuration of some lattice.  Currently, I am working on problems in dynamical percolation.  
+              I am a 3rd year math phd student at Georgia Tech studying probability theory, specifically percolation.  My advisor is Michael Damron.  Currently, I am working on problems in dynamical percolation.  
             </p>
             <p style={styles.paragraph}>
               Before grad school, I studied Mathematics (B.S) and Computer Science (B.S) at UNC Chapel Hill.  There, I worked with Dr. Idris Assani in number theory and ergodic theory.
@@ -76,11 +73,9 @@ export default function Home() {
 </section>
 
         <section id="papers" style={styles.sectionCard}>
-          <h2 style={styles.sectionTitle}>Paper</h2>
+          <h2 style={styles.sectionTitle}>Papers</h2>
           <article style={styles.itemCard}>
             <h3 style={styles.itemTitle}>{paper.title}</h3>
-            <p style={styles.itemMeta}>{paper.venue}</p>
-            <p style={styles.paragraph}>{paper.description}</p>
             <a href={paper.link} style={styles.link}>
               Read more →
             </a>
@@ -91,7 +86,7 @@ export default function Home() {
           <h2 style={styles.sectionTitle}>Contact</h2>
           <p style={styles.paragraph}>
             Email:{" "}
-            <a href="mailto:you@example.com" style={styles.link}>
+            <a href="ahande3@gatech.edu" style={styles.link}>
               you@example.com
             </a>
           </p>
