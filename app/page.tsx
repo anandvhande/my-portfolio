@@ -1,3 +1,5 @@
+import TriangularPercolation from "@/components/TriangularPercolation";
+
 const basePath =
   process.env.NODE_ENV === "production" ? "/my-portfolio" : "";
 
@@ -67,15 +69,17 @@ export default function Home() {
         </section>
 
         <section id="research" style={styles.sectionCard}>
-          <h2 style={styles.sectionTitle}>Research Interests</h2>
-          <ul style={styles.list}>
-            <li>Percolation theory</li>
-            <li>Random-cluster and Ising-type models</li>
-            <li>First-passage percolation</li>
-            <li>Noise sensitivity and dynamical percolation</li>
-            <li>Probability in statistical mechanics</li>
-          </ul>
-        </section>
+  <h2 style={styles.sectionTitle}>Research Interests</h2>
+  <ul style={styles.list}>
+    <li>Percolation theory</li>
+    <li>Random-cluster and Ising-type models</li>
+    <li>First-passage percolation</li>
+    <li>Noise sensitivity and dynamical percolation</li>
+    <li>Probability in statistical mechanics</li>
+  </ul>
+
+  <TriangularPercolation />
+</section>
 
         <section id="papers" style={styles.sectionCard}>
           <h2 style={styles.sectionTitle}>Paper</h2>
