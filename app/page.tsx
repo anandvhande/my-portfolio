@@ -1,37 +1,13 @@
-const papers = [
-  {
-    title: "Title of Paper One",
-    venue: "Journal / Conference, 2025",
-    description:
-      "A short 1–2 sentence summary of the paper and its main contribution.",
-    link: "#",
-  },
-  {
-    title: "Title of Paper Two",
-    venue: "Preprint, 2024",
-    description:
-      "A brief description of the problem studied and the main result.",
-    link: "#",
-  },
-  {
-    title: "Title of Paper Three",
-    venue: "Conference Name, 2023",
-    description:
-      "A concise explanation of the topic, methods, or findings.",
-    link: "#",
-  },
-];
+const basePath =
+  process.env.NODE_ENV === "production" ? "/my-portfolio" : "";
 
-const talks = [
-  {
-    title: "Talk Title",
-    event: "Seminar or Conference Name, 2025",
-  },
-  {
-    title: "Another Talk Title",
-    event: "Department Colloquium, 2024",
-  },
-];
+const paper = {
+  title: "Title of Paper",
+  venue: "Journal / Conference, 2025",
+  description:
+    "A short 1–2 sentence summary of the paper and its main contribution.",
+  link: "#",
+};
 
 export default function Home() {
   return (
@@ -40,13 +16,21 @@ export default function Home() {
         <div>
           <h1 style={styles.name}>Your Name</h1>
           <p style={styles.role}>PhD Student in Mathematics</p>
-          <p style={styles.affiliation}>Department of Mathematics, Your University</p>
+          <p style={styles.affiliation}>
+            Department of Mathematics, Your University
+          </p>
+
+          {/* CV moved up here */}
+          <p style={styles.cv}>
+            <a href={`${basePath}/cv.pdf`} style={styles.link}>
+              Curriculum Vitae
+            </a>
+          </p>
         </div>
 
         <nav style={styles.nav}>
           <a href="#research" style={styles.navLink}>Research</a>
           <a href="#papers" style={styles.navLink}>Papers</a>
-          <a href="#talks" style={styles.navLink}>Talks</a>
           <a href="#contact" style={styles.navLink}>Contact</a>
         </nav>
       </header>
@@ -54,10 +38,10 @@ export default function Home() {
       <section style={styles.profileSection}>
         <div style={styles.imageWrapper}>
           <img
-            src={`${process.env.NODE_ENV === "production" ? "/my-portfolio" : ""}/headshot.jpg`}
+            src={`${basePath}/headshot.jpg`}
             alt="Portrait of Your Name"
             style={styles.headshot}
-/>
+          />
         </div>
 
         <div style={styles.profileText}>
@@ -87,46 +71,24 @@ export default function Home() {
       </section>
 
       <section id="papers" style={styles.section}>
-        <h2 style={styles.sectionTitle}>Papers & Preprints</h2>
-        <div style={styles.items}>
-          {papers.map((paper) => (
-            <article key={paper.title} style={styles.itemCard}>
-              <h3 style={styles.itemTitle}>{paper.title}</h3>
-              <p style={styles.itemMeta}>{paper.venue}</p>
-              <p style={styles.paragraph}>{paper.description}</p>
-              <a href={paper.link} style={styles.link}>
-                Read more →
-              </a>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="talks" style={styles.section}>
-        <h2 style={styles.sectionTitle}>Selected Talks</h2>
-        <div style={styles.items}>
-          {talks.map((talk) => (
-            <article key={talk.title} style={styles.itemCard}>
-              <h3 style={styles.itemTitle}>{talk.title}</h3>
-              <p style={styles.itemMeta}>{talk.event}</p>
-            </article>
-          ))}
-        </div>
+        <h2 style={styles.sectionTitle}>Paper</h2>
+        <article style={styles.itemCard}>
+          <h3 style={styles.itemTitle}>{paper.title}</h3>
+          <p style={styles.itemMeta}>{paper.venue}</p>
+          <p style={styles.paragraph}>{paper.description}</p>
+          <a href={paper.link} style={styles.link}>
+            Read more →
+          </a>
+        </article>
       </section>
 
       <section id="contact" style={styles.section}>
         <h2 style={styles.sectionTitle}>Contact</h2>
         <p style={styles.paragraph}>
-          Email: <a href="mailto:you@example.com" style={styles.link}>you@example.com</a>
-        </p>
-        <p style={styles.paragraph}>
-          CV: <a href="#" style={styles.link}>Curriculum Vitae</a>
-        </p>
-        <p style={styles.paragraph}>
-          Google Scholar: <a href="#" style={styles.link}>Profile</a>
-        </p>
-        <p style={styles.paragraph}>
-          arXiv: <a href="#" style={styles.link}>Author page</a>
+          Email:{" "}
+          <a href="mailto:you@example.com" style={styles.link}>
+            you@example.com
+          </a>
         </p>
       </section>
     </main>
@@ -166,6 +128,9 @@ const styles: Record<string, React.CSSProperties> = {
   affiliation: {
     margin: 0,
     color: "#4b5563",
+  },
+  cv: {
+    marginTop: 12,
   },
   nav: {
     display: "flex",
@@ -222,10 +187,6 @@ const styles: Record<string, React.CSSProperties> = {
   list: {
     paddingLeft: 22,
     color: "#374151",
-  },
-  items: {
-    display: "grid",
-    gap: 16,
   },
   itemCard: {
     padding: "16px 0",
